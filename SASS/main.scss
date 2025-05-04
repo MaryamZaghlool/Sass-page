@@ -1,0 +1,231 @@
+@use 'sharedStyle' as shared;
+@use 'variables' as vars;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+
+    div {
+        a {
+            @include shared.link(vars.$f-family);
+            letter-spacing: 5px;
+        }
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            li {
+                a {
+                    text-transform: vars.$text;
+                    @include shared.link(vars.$f-family);
+
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 15px;
+    background-image: url("../images/mac.jpg");
+    background-size: cover;
+    height: 92.7vh;
+    filter: grayscale(50%);
+    background-position: center;
+
+    .parent {
+        width: 95%;
+        margin: auto;
+        height: 100%;
+
+        .top {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+
+            span {
+                @include shared.base(64px, 115.2px, vars.$f-family, vars.$main-color);
+                margin-bottom: 30px;
+            }
+
+            .p {
+                @include shared.base(18px, 32.4px, vars.$f-family, vars.$main-color);
+                margin-bottom: 35px;
+            }
+
+            a {
+                @extend .p;
+                text-decoration: vars.$decor;
+                background-color: vars.$secondary1-color;
+                color: vars.$secondary2-color;
+                width: fit-content;
+                padding: 15px 20px;
+            }
+        }
+
+        .icons {
+            display: flex;
+            margin-top: -50px;
+
+            i {
+                @include shared.icons(vars.$secondary1-color);
+                margin: 2px;
+
+                &:hover {
+                    color: vars.$secondary3-color;
+                }
+            }
+        }
+    }
+}
+
+.icon-cards {
+
+    @include shared.flex(center, center, column);
+    margin: 150px 0px;
+    text-align: vars.$center;
+
+    h3 {
+        @include shared.base(24px, 43.2px, vars.$f-family, vars.$secondary2-color);
+        margin-bottom: 30px;
+    }
+
+    .sec3-title {
+        @extend h3;
+        font-size: 18px;
+        line-height: 32.4px;
+        margin-bottom: 60px;
+    }
+
+    .cards {
+        width: 97%;
+        margin: auto;
+        @include shared.flex(space-between, center);
+
+        .card {
+            width: 360px;
+
+            i {
+                @include shared.base(64px, 64px, 'FontAwesome', vars.$secondary2-color)
+            }
+
+            .p1 {
+                @include shared.base(18px, 32.4px, vars.$f-family, vars.$secondary2-color);
+                margin: 20px;
+            }
+
+            .p2 {
+                @include shared.base(15px, 27px, vars.$f-family, vars.$secondary2-color);
+            }
+        }
+    }
+}
+
+.know-design {
+    background-color: vars.$secondary4-color;
+
+    .container {
+        height: 80vh;
+        width: 90%;
+        margin: auto;
+        @include shared.flex(space-between, center);
+
+        .top {
+            width: 38%;
+            margin-top: -150px;
+
+            h3 {
+                @include shared.base(24px, 43.2px, vars.$f-family, vars.$secondary2-color);
+                margin-bottom: 20px;
+            }
+
+            p {
+                @include shared.base(15px, 27px, vars.$f-family, vars.$secondary2-color);
+                margin-bottom: 30px;
+            }
+
+            button {
+                background-color: vars.$secondary2-color;
+                padding: 8px 20px;
+                border: none;
+                @include shared.base(15px, 27px, vars.$f-family, vars.$secondary4-color);
+
+                i {
+                    margin-right: 3px;
+                }
+            }
+        }
+
+        .bottom {
+            img {
+                border-radius: 7px;
+            }
+        }
+
+    }
+}
+
+.team {
+    margin: 100px 40px;
+    h3 {
+        @include shared.base(24px, 43.2px, vars.$f-family, vars.$secondary2-color);
+        text-align: vars.$center;
+    }
+
+    h4{
+        @include shared.base(18px, 43.2px, vars.$f-family, vars.$secondary2-color);
+        text-align: vars.$center;
+        margin: 10px 0px 50px;
+    }
+
+    .team-cards {
+        @include shared.flex(space-between, center) ;
+        .team-card {
+            width: 365px;
+            border: 1px solid vars.$secondary4-color;
+            box-shadow: 2px 2px 20px vars.$secondary4-color;
+
+            img {
+                width: 100%;
+                filter: grayscale(70%);
+            }
+            .team-title{
+                @include shared.base(24px, 43.2px, vars.$f-family, vars.$secondary2-color);
+                text-align: left;
+                margin: 0px 10px;
+            }
+            .team-p1{
+                @include shared.base(15px, 27px, vars.$f-family, vars.$secondary3-color);
+                margin: 20px 10px;
+            }
+            .team-p2{
+                margin: 0px 10px;
+                @extend .team-p1;
+                color: vars.$secondary2-color;
+            }
+            button{
+                @extend .team-p2;
+                background-color: vars.$secondary4-color;
+                width: 90%;
+                margin: 20px;
+                border: none;
+                padding: 10px;
+            }
+        }
+    }
+}

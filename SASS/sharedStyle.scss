@@ -1,0 +1,40 @@
+@mixin base-a($f-size, $f-family) {
+    font-size: $f-size;
+    line-height: 32.4px;
+    font-weight: 400;
+    font-family: $f-family;
+}
+
+@mixin link($f-family) {
+    font-size: 15px;
+    font-family: $f-family;
+    line-height: 27px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    padding: 20px 17px;
+
+    &:hover {
+        background-color: rgb(204, 204, 204);
+    }
+}
+
+@mixin base($f-size, $line-h, $f-family, $f-color) {
+    font-size: $f-size;
+    font-weight: 400;
+    line-height: $line-h;
+    font-family: $f-family;
+    color: $f-color;
+}
+
+@mixin icons($color) {
+    @include base(18px, 18px, 'FontAwesome', $color);
+}
+
+@mixin flex($justify, $align, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap:wrap;
+}
